@@ -5,11 +5,12 @@ import Hero from '@components/Hero.astro';
 import { type ConfigModel } from '@ts/Models'
 
 import dataRaw from "@src/config.json";
+
 const data:ConfigModel= dataRaw;
 
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 ---
 <BaseLayout name={data.name}>
 	<Hero title={data.name} subtitle={data.subtitle} parent={data.parent}/>
 </BaseLayout>
-<ViewTransitions/>
+<ClientRouter/>
