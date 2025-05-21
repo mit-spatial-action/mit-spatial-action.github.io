@@ -34,11 +34,13 @@
             "socials": [
                 {
                     "name": "Github",
-                    "url": "https://github.com/ericrobskyhuntley"
+                    "url": "https://github.com/ericrobskyhuntley",
+                    "user": "ericrobskyhuntley"
                 },
                 {
-                    "name": "Linkedin",
-                    "url": "https://www.linkedin.com/in/ericrobskyhuntley"
+                    "name": "Web",
+                    "url": "https://ericrobskyhuntley.github.io/",
+                    "user": "Website"
                 }
             ],
             "bio": "Eric Robsky Huntley, PhD is a [Lecturer in Urban Science and Planning](https://dusp.mit.edu/people/eric-robsky-huntley) in [MIT's Department of Urban Studies and Planning (DUSP)](https://dusp.mit.edu/) and the director of the [Spatial Analysis and Action Research Group](https://mit-spatial-action.github.io/).  They are a GIScientist, geographer, and urban planner whose research practice focuses on what mapping and spatial data science can do for movements for social justice. Alongside their primary appointment at DUSP, they have also held academic appointments at [Harvard University's Graduate School of Design](https://www.gsd.harvard.edu/) and [Columbia University's Graduate School of Architecture, Planning, and Preservation](https://www.arch.columbia.edu/). They are also Founder and Principal of [OGRAPHIES Research and Design](http://ographiesresearch.com/), a mission-driven spatial data science consultancy. They hold a PhD in geography from the [University of Kentucky's Department of Geography](https://geography.as.uky.edu/) and a Master of Urban and Regional Planning from the [University of Michigan's Taubman College of Architecture and Urban Planning](https://taubmancollege.umich.edu/)."
@@ -54,7 +56,18 @@
             "socials": [
                 {
                     "name": "Github",
-                    "url": "https://github.com/anastasia"
+                    "url": "https://github.com/anastasia",
+                    "user": "anastasia"
+                }, 
+                {
+                    "name": "Web",
+                    "url": "https://asya.codes/",
+                    "user": "Website"
+                },
+                {
+                    "name": "LinkedIn",
+                    "url": "https://www.linkedin.com/in/asya-aizman-79b345334",
+                    "user": "Website"
                 }
             ],
             "bio": "Asya Aizman is a PhD Student in the [Department of Urban Studies and Planning at MIT](https://dusp.mit.edu/). Asya works on housing, open access, and people power, with particular interest in forms of class solidarity between property owners. Before arriving at DUSP, she was a creative technologist & visiting researcher at [MIT's Digital Humanities Lab](https://digitalhumanities.mit.edu/) and a creative technologist & designer at the [Harvard Law Library Innovation Lab](https://lil.law.harvard.edu/). She holds a Master's in City Planning from [MIT DUSP](https://dusp.mit.edu/), Bachelor of Fine Arts from the [Parsons School of Design](https://www.newschool.edu/parsons/) and a Bachelor of Arts from [The New School](https://www.newschool.edu/)."
@@ -69,11 +82,13 @@
             "socials": [
                 {
                     "name": "Github",
-                    "url": "https://github.com/mchuttani18"
+                    "url": "https://github.com/mchuttani18",
+                    "user": "mchuttani18"
                 },
                 {
                     "name": "LinkedIn",
-                    "url": "https://www.linkedin.com/in/mchuttani"
+                    "url": "https://www.linkedin.com/in/mchuttani",
+                    "user": "mchuttani"
                 }
             ],
             "bio": "Milan Chuttani is a research assistant in the Spatial Analysis & Action Research Group and an MCP candidate in the [Department of Urban Studies and Planning at MIT](https://dusp.mit.edu/). Milan's interests are in transforming spatial, qualitative, and quantitative data into compelling narratives that promote health equity. Milan also serves as a data analyst at the [Vital Village Networks](https://www.vitalvillage.org/). Prior to joining DUSP, Milan was an ORISE Fellow at the CDC's Division of Global Migration and Quarantine, developing web applications and GIS tools to support the COVID-19 pandemic response and public health initiatives for globally mobile populations. Milan holds with a Bachelor of Arts in Government from [Dartmouth College](https://home.dartmouth.edu/)."
@@ -88,7 +103,13 @@
             "socials": [
                 {
                     "name": "Github",
-                    "url": "https://github.com/Jiaoz17"
+                    "url": "https://github.com/Jiaoz17",
+                    "user": "Jiaoz17"
+                },
+                {
+                    "name": "Linkedin",
+                    "url": "https://www.linkedin.com/in/jiao-zhao-ba3154295",
+                    "user": "LinkedIn"
                 }
             ],
             "bio": "Her interests revolve around housing, urban inequalities, and using technology to drive social innovation. Prior to landing at DUSP, she worked as an archiurbanist, focusing on improving underutilized spaces to foster more vibrant public life and sustainable urban environments. She holds a Bachelor of Engineering in Architecture from [Tongji University](https://en.tongji.edu.cn/p/)."
