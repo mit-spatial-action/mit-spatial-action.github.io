@@ -1,5 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components'
 
 import { type NavModel, type ConfigModel, type NameURLModel } from '@ts/Models'
 
@@ -13,8 +12,6 @@ interface Props {
 
 import dataRaw from "@src/config.json";
 const data:ConfigModel= dataRaw;
-
-const iconSize = 20;
 
 const { navItems, parent } = Astro.props;
 ---
