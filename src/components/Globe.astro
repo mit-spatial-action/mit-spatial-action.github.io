@@ -52,7 +52,8 @@ let blendMode = light ? 'darken' : 'screen';
                 interactive: Boolean(this.dataset.interactive),
                 bearing: Number(this.dataset.bearing),
                 pitch: Number(this.dataset.pitch),
-                zoom: Number(this.dataset.zoom)
+                zoom: Number(this.dataset.zoom),
+                attributionControl: false
             })
 
             map.setStyle(this.dataset.style);
@@ -110,7 +111,7 @@ let blendMode = light ? 'darken' : 'screen';
         spinGlobe(map) {
             let cnt = map.getCenter();
             cnt.lng -= 360 / Number(this.dataset.sec);
-            map.easeTo({ center: cnt, duration: 1000, easing: (n) => n });
+            map.easeTo({ center: cnt, duration: 5000, easing: (n) => n });
         }
     } 
     customElements.define("mapbox-map", MapboxMap);
