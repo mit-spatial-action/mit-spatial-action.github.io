@@ -2,8 +2,7 @@
 
 import { type NavModel, type ConfigModel, type NameURLModel } from '@ts/Models'
 
-import { Image } from 'astro:assets';
-import mitLogo from '../assets/mit_lockup_micro-one-line_rgb_black.svg';
+import MITLogo from '../assets/mit_lockup_micro-one-line_rgb_black.svg';
 
 interface Props {
   navItems: NavModel[];
@@ -29,10 +28,9 @@ const { navItems, parent } = Astro.props;
         </div>
         <div class="block">
           <a href="https://mit.edu">
-          <Image 
-            src={mitLogo} 
-            alt="MIT Logotype."
+          <MITLogo 
             height="24"
+            fill = "currentColor"
           />
           </a>
         </div>
@@ -40,9 +38,9 @@ const { navItems, parent } = Astro.props;
       <div class="column is-one-third">
         <ul>
         {
-              navItems.map((item) => (
-                  <li><a href={item.path}>{item.title}</a></li>
-              ))
+            navItems.map((item) => (
+                <li><a href={item.path}>{item.title}</a></li>
+            ))
         }
         {
           data.socials.map((platform) => (
