@@ -3,13 +3,18 @@ import { ClientRouter } from "astro:transitions";
 import Header from '@components/Header.astro';
 import Globe from '@components/Globe.astro';
 import Footer from '@components/Footer.astro';
-import Background from '@components/Background.astro';
 
-import '../sass/styles.scss';
+import '../styles/styles.scss';
 
 interface Props {
   name: string;
 }
+
+import {
+  getSecret,
+ } from 'astro:env/server';
+
+const key = getSecret ('PUBLIC_MAPBOX_KEY');
 
 const { name } = Astro.props;
 
@@ -42,8 +47,8 @@ const data:ConfigModel= dataRaw;
 	</head>
 	<body>
 		<section class="section is-fullheight">
-			<Header {navItems}/>
-			<div class="container" id="content">
+			<div class="container">
+				<Header {navItems}/>
 				<slot/>
 			</div>
 		</section>
@@ -61,7 +66,6 @@ const data:ConfigModel= dataRaw;
 		light={data.map.light}
 		linewidth={data.map.linewidth}
 		interactive={data.map.interactive}
-		accesstoken={import.meta.env.PUBLIC_MAPBOX_KEY}/>
-		<Background light={data.map.light}/>
+		accesstoken={key}/>
 	</body>
 </html>

@@ -9,7 +9,6 @@ interface Props extends GlobeModel {
 
 const { lng, lat, zoom, style, bearing, pitch = 0, accesstoken, light = true, linewidth = 0.1, linework = false, interactive = false, sec = 8000} = Astro.props;
 
-let figureColor = light ? 'danger' : 'success';
 let blendMode = light ? 'darken' : 'screen';
 
 ---
@@ -24,7 +23,6 @@ let blendMode = light ? 'darken' : 'screen';
     data-bearing={bearing}
     data-pitch={pitch}
     data-accesstoken={accesstoken}
-    data-figurecolor={figureColor}
     data-light={light}
     data-linewidth={linewidth}
     data-linework={linework}
@@ -35,9 +33,13 @@ let blendMode = light ? 'darken' : 'screen';
 <script>
     import { type MapBoxLayerModel } from '@ts/Models'
     import mapboxgl from "mapbox-gl"
-    import * as stylesRaw from 'src/sass/_variables.module.scss';
+    import * as stylesRaw from '../styles/styles.scss';
     import { type StylesModel } from '@ts/Models';
     const styles:StylesModel = Object(stylesRaw);
+
+    const isDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+
+    const lineColor = isDark ? "white" : "#460080";
 
     class MapboxMap extends HTMLElement {
         constructor() {
@@ -82,8 +84,8 @@ let blendMode = light ? 'darken' : 'screen';
             const layers = map.getStyle().layers;
             Object.entries(layers).forEach((s:MapBoxLayerModel) => {
                 if (s[1].type == "line") {
-                        map.setPaintProperty(s[1].id, 'line-color', styles[this.dataset.figurecolor]);
-                        map.setPaintProperty(s[1].id, 'line-width', Number(this.dataset.linewidth));
+                    map.setPaintProperty(s[1].id, 'line-color', lineColor);
+                    map.setPaintProperty(s[1].id, 'line-width', Number(this.dataset.linewidth));
                 }
                 if (s[1].type == "fill") {
                     map.removeLayer(s[1].id)
@@ -95,7 +97,7 @@ let blendMode = light ? 'darken' : 'screen';
                             "source-layer": s[1]['source-layer'],
                             type: "line"
                         })
-                        map.setPaintProperty(id, 'line-color', styles[this.dataset.figurecolor]);
+                        map.setPaintProperty(id, 'line-color', lineColor);
                         map.setPaintProperty(id, 'line-width', Number(this.dataset.linewidth));
                     }
                 }
@@ -114,9 +116,8 @@ let blendMode = light ? 'darken' : 'screen';
     customElements.define("mapbox-map", MapboxMap);
 </script>
 
-<style define:vars={{ blendMode }}>
+<style>
     #map {
-        mix-blend-mode: var(--blendMode);
         height: 100%;
         width: 100vw;
         position: fixed;
