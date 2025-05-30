@@ -20,29 +20,28 @@ const iconSize = 20;
 
 ---
 <AboutCard columns={columns}>
-  <div class="block">
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
+  <div class="fixed-grid">
+    <div class="grid">
         {"photo" in person && 
-        <div class="tile is-child is-4">
+        <div class="is-4 cell">
           <ImageBox src={person.photo} alt={"Photo of ".concat(person.name)} />
         </div>
         }
-        <div class="tile is-child is-8">
-          <p class="title is-4 has-text-danger">{person.name}{person.creds && ", ".concat(person.creds.join(", "))}</p>
-          <p class="subtitle is-4 has-text-danger">{person.roles && person.roles.join(", ")}</p>
+        <div class="is-8 cell">
+          <p class="title is-4">{person.name}{person.creds && ", ".concat(person.creds.join(", "))}</p>
+          <p class="subtitle is-4">{person.roles && person.roles.join(", ")}</p>
           <div class="tags are-medium">
-            <p class="tag is-success has-text-danger">
+            <p class="tag is-primary">
               <span class="mr-2 icon">
                 <Icon name="mdi:person" size={iconSize} />
               </span>
-              {person.pronouns}
+              <span class="has-text-white">{person.pronouns}</span>
             </p>
-            <p class="tag is-success has-text-danger">
+            <p class="tag is-primary">
               <span class="mr-2 icon">
                 <Icon name="mdi:email" size={iconSize} />
               </span>
-              {person.email && <a class="has-text-danger" href={"mailto:".concat(person.email)}>{person.email}</a>}
+              {person.email && <a class="has-text-white" href={"mailto:".concat(person.email)}>{person.email}</a>}
             </p>
           </div>
         </div>
@@ -50,17 +49,17 @@ const iconSize = 20;
     </div>
   </div>
   <div class="block">
-    <p class="has-text-danger" set:html={md.renderInline(person.bio)}></p>
+    <p set:html={md.renderInline(person.bio)}></p>
   </div>
   <div class="block">
     <div class="tags">
       {
         person.socials.map((platform) => (
-          <div class="tag is-medium is-success has-text-danger">
+          <div class="tag is-medium is-primary">
             <span class="icon mr-2">
               <Icon name={"mdi:".concat(platform.name.toLowerCase())} size={iconSize} />
             </span>
-            <a href={platform.url} class="has-text-danger">{platform.user}</a>
+            <a class="has-text-white" href={platform.url}>{platform.user}</a>
           </div>
         ))
       }

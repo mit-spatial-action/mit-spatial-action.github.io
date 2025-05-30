@@ -2,7 +2,6 @@
 import BaseLayout from '@layouts/BaseLayout.astro'
 import People from '@components/People.astro'
 import Organization from '@components/Organization.astro'
-import { ViewTransitions } from 'astro:transitions'
 
 import { type ConfigModel } from '@ts/Models'
 
@@ -19,23 +18,18 @@ let leadership = data.people.filter(function(person) {
 
 ---
 <BaseLayout name={data.name}>
-  <section class="section">
-  <div class="columns">
-      <Organization org={data} columns={true}/>
-      <People people={leadership} columns={true}/>
-    </div>
-  </div>
-  </section>
-  {(people.length >0 ) &&
-    <section class="section">
-        <h1 class="title has-text-white text-shadow-danger">Our Team</h1>
-      <div class="columns is-multiline">
-        <People people={people} columns={true} />
+    <div class="mt-auto columns">
+        <Organization org={data} columns={true}/>
+        <People people={leadership} columns={true}/>
       </div>
-    </section>
-  }
+    </div>
+    {(people.length >0 ) &&
+        <h1 class="title box box-shadow">The Team</h1>
+        <div class="columns is-multiline">
+          <People people={people} columns={true} />
+        </div>
+    }
 </BaseLayout>
-<ViewTransitions/>
 
 <style>
 </style>

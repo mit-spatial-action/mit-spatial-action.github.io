@@ -16,50 +16,50 @@ const data:ConfigModel= dataRaw;
 const { navItems, parent } = Astro.props;
 ---
 
-<footer class="footer has-background-success">
-  <section class="section">
-  <div class="columns">
-    <div class="column is-one-third">
-      <div class="block">
-        <p class="has-text-danger has-text-weight-bold">{data.name}{data.corp_form && ", ".concat(data.corp_form)}</p>
-        <p class="has-text-danger">{data.subtitle}</p>     
-        {parent && 
-          <p class="has-text-danger"><a href={parent.url}>{parent.name}</a></p>
+<footer class="footer">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-third">
+        <div class="block">
+          <p class="has-text-weight-bold">{data.name}{data.corp_form && ", ".concat(data.corp_form)}</p>
+          <p>{data.subtitle}</p>     
+          {parent && 
+            <p class="has-text-primary"><a href={parent.url}>{parent.name}</a></p>
+          }
+        </div>
+        <div class="block">
+          <a href="https://mit.edu">
+          <Image 
+            src={mitLogo} 
+            alt="MIT Logotype."
+            height="24"
+          />
+          </a>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <ul>
+        {
+              navItems.map((item) => (
+                  <li><a href={item.path}>{item.title}</a></li>
+              ))
         }
+        {
+          data.socials.map((platform) => (
+          <li><a href={platform.url}>{platform.name}</a></li>
+          ))
+        }
+        </ul>
       </div>
-      <div class="block">
-        <a href="https://mit.edu">
-        <Image 
-          src={mitLogo} 
-          alt="MIT Logotype."
-          height="24"
-        />
-        </a>
+      <div class="column is-one-third">
+        <ul>
+          <li>{data.email && <a href={"mailto:".concat(data.email)}>{data.email}</a>}</li>
+          <li>{data.phone && <a href={"tel:".concat(data.phone)}>{data.phone}</a>}</li>
+          <li>{data.office.address}</li>
+          <li>{data.office.address2}</li>
+          <li>{data.office.city}, {data.office.state} {data.office.postal}</li>
+        </ul>
       </div>
-    </div>
-    <div class="column is-one-third">
-      <ul>
-      {
-            navItems.map((item) => (
-                <li><a href={item.path} class="has-text-danger">{item.title}</a></li>
-            ))
-      }
-      {
-        data.socials.map((platform) => (
-        <li><a href={platform.url} class="has-text-danger">{platform.name}</a></li>
-        ))
-      }
-      </ul>
-    </div>
-    <div class="column is-one-third">
-      <ul>
-        <li>{data.email && <a href={"mailto:".concat(data.email)} class="has-text-danger">{data.email}</a>}</li>
-        <li>{data.phone && <a href={"tel:".concat(data.phone)} class="has-text-danger">{data.phone}</a>}</li>
-        <li class="has-text-danger">{data.office.address}</li>
-        <li class="has-text-danger">{data.office.address2}</li>
-        <li class="has-text-danger">{data.office.city}, {data.office.state} {data.office.postal}</li>
-      </ul>
     </div>
   </div>
-  </section>
 </footer>
