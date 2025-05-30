@@ -7,10 +7,7 @@ import { type ConfigModel } from '@ts/Models'
 import dataRaw from "@src/config.json";
 
 const data:ConfigModel= dataRaw;
-
-import { ClientRouter } from 'astro:transitions';
 ---
 <BaseLayout name={data.name}>
 	<Hero title={data.name} subtitle={data.subtitle} parent={data.parent}/>
 </BaseLayout>
-<ClientRouter/>
