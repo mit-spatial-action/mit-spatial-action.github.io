@@ -1,7 +1,7 @@
 {
     "name": "Spatial Analysis & Action Research Group",
     "parent": {
-        "name": "MIT Department of Urban Studies and Planning",
+        "name": "Department of Urban Studies and Planning",
         "url": "https://dusp.mit.edu/"
     },
     "corp_form": null,
@@ -28,7 +28,7 @@
             "name": "Eric Robsky Huntley",
             "photo": "eric.jpg",
             "leadership": true,
-            "creds": ["PhD"],
+            "creds": ["PhD", "GISP"],
             "pronouns": "they/them",
             "roles": ["Director"],
             "email": "ehuntley@mit.edu",
@@ -44,7 +44,7 @@
                     "user": "Website"
                 }
             ],
-            "bio": "Eric Robsky Huntley, PhD is a [Lecturer in Urban Science and Planning](https://dusp.mit.edu/people/eric-robsky-huntley) in [MIT's Department of Urban Studies and Planning (DUSP)](https://dusp.mit.edu/) and the director of the [Spatial Analysis and Action Research Group](https://mit-spatial-action.github.io/).  They are a GIScientist, geographer, and urban planner whose research practice focuses on what mapping and spatial data science can do for movements for social justice. Alongside their primary appointment at DUSP, they have also held academic appointments at [Harvard University's Graduate School of Design](https://www.gsd.harvard.edu/) and [Columbia University's Graduate School of Architecture, Planning, and Preservation](https://www.arch.columbia.edu/). They are also Founder and Principal of [OGRAPHIES Research and Design](http://ographiesresearch.com/), a mission-driven spatial data science consultancy. They hold a PhD in geography from the [University of Kentucky's Department of Geography](https://geography.as.uky.edu/) and a Master of Urban and Regional Planning from the [University of Michigan's Taubman College of Architecture and Urban Planning](https://taubmancollege.umich.edu/)."
+            "bio": "Eric Robsky Huntley, PhD, GISP is a [Lecturer in Urban Science and Planning](https://dusp.mit.edu/people/eric-robsky-huntley) in [MIT's Department of Urban Studies and Planning (DUSP)](https://dusp.mit.edu/) and the director of the [Spatial Analysis and Action Research Group](https://mit-spatial-action.github.io/).  They are a GIScientist, geographer, and urban planner whose research practice focuses on what mapping and spatial data science can do for movements for social justice. Alongside their primary appointment at DUSP, they have also held academic appointments at [Harvard University's Graduate School of Design](https://www.gsd.harvard.edu/) and [Columbia University's Graduate School of Architecture, Planning, and Preservation](https://www.arch.columbia.edu/). They are also Founder and Principal of [OGRAPHIES Research and Design](http://ographiesresearch.com/), a mission-driven spatial data science consultancy. They hold a PhD in geography from the [University of Kentucky's Department of Geography](https://geography.as.uky.edu/) and a Master of Urban and Regional Planning from the [University of Michigan's Taubman College of Architecture and Urban Planning](https://taubmancollege.umich.edu/)."
         },
         {
             "name": "Asya Aizman",

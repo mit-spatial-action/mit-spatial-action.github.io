@@ -17,8 +17,8 @@ const { org, columns = true} = Astro.props;
 ---
 <AboutCard columns={columns}>
   <div class="block">
-    <p class="title is-4">{org.name}</p>
-    <p class="subtitle is-4">{org.subtitle}</p>
+    <p class="title">{org.name}</p>
+    <p class="subtitle">{org.subtitle}</p>
     {org.parent && 
       <p><a href={org.parent.url}>{org.parent.name}</a></p>
     }   
@@ -37,11 +37,11 @@ const { org, columns = true} = Astro.props;
   <div class="block">
       {
         org.socials.map((platform) => (
-          <div class="tag is-medium is-primary">
+          <div class="tag is-medium">
             <span class="icon mr-2">
               <Icon name={"mdi:".concat(platform.name.toLowerCase())} size={iconSize} />
             </span>
-            <a class="has-text-white" href={platform.url}>{platform.url.split("/").pop()}</a>
+            <a href={platform.url}>{platform.url.split("/").pop()}</a>
           </div>
         ))
       }

@@ -9,11 +9,10 @@ interface Props extends GlobeModel {
 
 const { lng, lat, zoom, style, bearing, pitch = 0, accesstoken, light = true, linewidth = 0.1, linework = false, interactive = false, sec = 8000} = Astro.props;
 
-let blendMode = light ? 'darken' : 'screen';
-
 ---
 
 <div transition:persist id="map"/>
+<div transition:persist id="bg"/>
 <mapbox-map
     transition:persist
     data-lat={lat}
@@ -32,14 +31,11 @@ let blendMode = light ? 'darken' : 'screen';
 
 <script>
     import { type MapBoxLayerModel } from '@ts/Models'
-    import mapboxgl from "mapbox-gl"
-    import * as stylesRaw from '../styles.scss';
-    import { type StylesModel } from '@ts/Models';
-    const styles:StylesModel = Object(stylesRaw);
+    import mapboxgl from "mapbox-gl";
 
-    const isDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
-
-    const lineColor = isDark ? "white" : "#460080";
+    const primaryColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--bulma-primary')
+        .trim();
 
     class MapboxMap extends HTMLElement {
         constructor() {
@@ -80,12 +76,11 @@ let blendMode = light ? 'darken' : 'screen';
             let ctrl:SelectedElement = document.querySelector('.mapboxgl-ctrl')
             ctrl.style["display"] = "none";
         }
-
         lineWork(map) {
             const layers = map.getStyle().layers;
             Object.entries(layers).forEach((s:MapBoxLayerModel) => {
                 if (s[1].type == "line") {
-                    map.setPaintProperty(s[1].id, 'line-color', lineColor);
+                    map.setPaintProperty(s[1].id, 'line-color', primaryColor);
                     map.setPaintProperty(s[1].id, 'line-width', Number(this.dataset.linewidth));
                 }
                 if (s[1].type == "fill") {
@@ -98,7 +93,7 @@ let blendMode = light ? 'darken' : 'screen';
                             "source-layer": s[1]['source-layer'],
                             type: "line"
                         })
-                        map.setPaintProperty(id, 'line-color', lineColor);
+                        map.setPaintProperty(id, 'line-color', primaryColor);
                         map.setPaintProperty(id, 'line-width', Number(this.dataset.linewidth));
                     }
                 }
@@ -126,9 +121,18 @@ let blendMode = light ? 'darken' : 'screen';
         top: 0;
         z-index: -1;
     }
-  @media (prefers-color-scheme: dark) {
-    #map {
-		background-color: styles.$primary;
-	}
-  }
+
+    @media (prefers-color-scheme: dark) {
+        #bg {
+            background-color: styles.$primary;
+            height: 100%;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            z-index: -2;
+        }
+        #map {
+            filter: brightness(0) invert(99%) sepia(56%) saturate(133%) hue-rotate(289deg) brightness(116%) contrast(100%);
+        }
+    }
 </style>

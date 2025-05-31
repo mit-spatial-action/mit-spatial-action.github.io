@@ -23,25 +23,25 @@ const iconSize = 20;
   <div class="fixed-grid">
     <div class="grid">
         {"photo" in person && 
-        <div class="is-4 cell">
+        <div class="cell">
           <ImageBox src={person.photo} alt={"Photo of ".concat(person.name)} />
         </div>
         }
-        <div class="is-8 cell">
-          <p class="title is-4">{person.name}{person.creds && ", ".concat(person.creds.join(", "))}</p>
-          <p class="subtitle is-4">{person.roles && person.roles.join(", ")}</p>
+        <div class="cell">
+          <p class="title">{person.name}{person.creds && ", ".concat(person.creds.join(", "))}</p>
+          <p class="subtitle">{person.roles && person.roles.join(", ")}</p>
           <div class="tags are-medium">
-            <p class="tag is-primary">
+            <p class="tag">
               <span class="mr-2 icon">
                 <Icon name="mdi:person" size={iconSize} />
               </span>
-              <span class="has-text-white">{person.pronouns}</span>
+              <span>{person.pronouns}</span>
             </p>
-            <p class="tag is-primary">
+            <p class="tag">
               <span class="mr-2 icon">
                 <Icon name="mdi:email" size={iconSize} />
               </span>
-              {person.email && <a class="has-text-white" href={"mailto:".concat(person.email)}>{person.email}</a>}
+              {person.email && <a href={"mailto:".concat(person.email)}>{person.email}</a>}
             </p>
           </div>
         </div>
@@ -55,11 +55,11 @@ const iconSize = 20;
     <div class="tags">
       {
         person.socials.map((platform) => (
-          <div class="tag is-medium is-primary">
+          <div class="tag is-medium">
             <span class="icon mr-2">
               <Icon name={"mdi:".concat(platform.name.toLowerCase())} size={iconSize} />
             </span>
-            <a class="has-text-white" href={platform.url}>{platform.user}</a>
+            <a href={platform.url}>{platform.user}</a>
           </div>
         ))
       }

@@ -12,10 +12,10 @@ const { title, subtitle, parent } = Astro.props;
 <section class="hero is-fullheight">
     <div class="hero-body" style="z-index:1000">
         <div class="box box-shadow">
-            <h1 class="title is-size-1"> {title}</h1>
-            <p class="subtitle is-size-2">{subtitle}</p>
+            <h1 class="title"> {title}</h1>
+            <p class="subtitle">{subtitle}</p>
             {parent &&
-                <p class="subtitle is-size-3"><a href={parent.url}>{parent.name}</a></p>
+                <p class="subtitle"><a href={parent.url}>{parent.name}</a></p>
             }
         </div>
     </div>
