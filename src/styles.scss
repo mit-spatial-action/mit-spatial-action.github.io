@@ -14,12 +14,15 @@ $shadow-offset: 3px;
     $radius: 0
 );
 
-.text-shadow {
-    text-shadow: $shadow-offset $shadow-offset $primary;
-}
-
 .box-shadow {
     box-shadow: $shadow-offset $shadow-offset $primary;
+};
+
+
+@media (prefers-color-scheme: dark) {
+    .box-shadow {
+        box-shadow: $shadow-offset $shadow-offset white;
+    }
 }
 
 .icon {
