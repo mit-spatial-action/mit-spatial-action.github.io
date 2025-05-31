@@ -4,17 +4,16 @@ import Header from '@components/Header.astro';
 import Globe from '@components/Globe.astro';
 import Footer from '@components/Footer.astro';
 
+import { SEO } from "astro-seo";
+import { getSecret } from 'astro:env/server';
+
 import '../styles/styles.scss';
 
 interface Props {
   name: string;
 }
 
-import {
-  getSecret,
- } from 'astro:env/server';
-
-const key = getSecret ('PUBLIC_MAPBOX_KEY');
+const key = getSecret('PUBLIC_MAPBOX_KEY');
 
 const { name } = Astro.props;
 
@@ -38,11 +37,29 @@ const data:ConfigModel= dataRaw;
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<SEO
+			title=`${name}—MIT DUSP`
+			description=`${data.description}`
+			charset="UTF-8"
+			canonical=`${Astro.url.href}`
+			openGraph={{
+				basic: {
+					title: `MIT SAAARG—${data.subtitle}`,
+					type: "website",
+					image: "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+					url: `${Astro.url.href}`
+				},
+				optional: {
+					description: `${data.description}`,
+    				locale: "en_US",
+					siteName: `${name}—MIT DUSP`
+				}
+			}}
+		/>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="generator" content={Astro.generator} />
-		<title>{name}</title>
 		<ClientRouter />
 	</head>
 	<body>
