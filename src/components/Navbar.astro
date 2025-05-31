@@ -9,7 +9,7 @@ const {navItems} = Astro.props;
 
 <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a role="button" class="navbar-burger box-shadow" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -20,7 +20,7 @@ const {navItems} = Astro.props;
     <div class="navbar-start is-grouped">
         {
             navItems.map((item) => (
-                <a class="navbar-item box-shadow is-fullwidth is-medium m-2" href={item.path}>{item.title}</a>
+                <a class="navbar-item is-fullwidth is-medium m-2" href={item.path}>{item.title}</a>
             ))
         }
     </div>
@@ -40,24 +40,18 @@ const {navItems} = Astro.props;
 </script>
 
 <style lang="scss">
+  @use '../styles';
   .navbar-item, .navbar-burger {
-    background-color: hsl(0, 0%, 96%);
+    background-color: styles.$primary !important;
     transition: background-color 0.3s;
     border-radius: 0;
+    color: white;
   }
 
   .navbar-burger > span {
     height: 0.12em;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .navbar-item, .navbar-burger {
-      background-color: hsl(0, 0%, 14%); /* Approx. $background-dark */
-    }
-    .navbar-burger {
-      color: white;
-    }
-  }
   .is-transparent {
     background-color: transparent;
     box-shadow: none; /* optional: remove default shadow */
