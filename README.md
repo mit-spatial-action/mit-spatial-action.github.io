@@ -1,7 +1,7 @@
 # mit-spatial-action.github.io
 
 <!-- badges: start -->
-[![CodeQL](https://github.com/mit-spatial-action/mit-spatial-action.github.io/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/mit-spatial-action/mit-spatial-action.github.io/actions/workflows/github-code-scanning/codeql) [![Deploy to GitHub Pages](https://github.com/mit-spatial-action/mit-spatial-action.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/mit-spatial-action/mit-spatial-action.github.io/actions/workflows/deploy.yml)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)[![CodeQL](https://github.com/mit-spatial-action/mit-spatial-action.github.io/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/mit-spatial-action/mit-spatial-action.github.io/actions/workflows/github-code-scanning/codeql) [![Deploy to GitHub Pages](https://github.com/mit-spatial-action/mit-spatial-action.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/mit-spatial-action/mit-spatial-action.github.io/actions/workflows/deploy.yml)
 <!-- badges: end -->
 
 Simple [Astro](https://github.com/withastro/astro) static site for the [MIT DUSP Spatial Analysis & Action Lab](https://mit-spatial-action.github.io/) (or SAARG).
