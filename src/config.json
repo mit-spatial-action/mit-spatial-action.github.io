@@ -28,6 +28,7 @@
             "name": "Eric Robsky Huntley",
             "photo": "eric.jpg",
             "leadership": true,
+            "alum": false,
             "creds": ["PhD", "GISP"],
             "pronouns": "they/them",
             "roles": ["Director"],
