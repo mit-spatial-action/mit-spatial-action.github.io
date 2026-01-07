@@ -13,7 +13,11 @@ let leadership = data.people.filter(function(person) {
  });
 
  let people = data.people.filter(function(person) {
-      return !person.leadership;
+      return !person.leadership && !person.alum;
+ });
+
+  let alumni = data.people.filter(function(person) {
+      return !person.leadership && person.alum;
  });
 
 ---
@@ -27,6 +31,12 @@ let leadership = data.people.filter(function(person) {
         <h1 class="title box box-shadow">The Team</h1>
         <div class="columns is-multiline">
           <People people={people} columns={true} />
+        </div>
+    }
+    {(alumni.length >0 ) &&
+        <h1 class="title box box-shadow">Alumni</h1>
+        <div class="columns is-multiline">
+          <People people={alumni} columns={true} />
         </div>
     }
 </Layout>
