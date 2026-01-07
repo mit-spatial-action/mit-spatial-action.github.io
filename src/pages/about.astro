@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro'
+import Layout from '@layouts/Layout.astro'
 import People from '@components/People.astro'
 import Organization from '@components/Organization.astro'
 
@@ -17,7 +17,7 @@ let leadership = data.people.filter(function(person) {
  });
 
 ---
-<BaseLayout name={data.name}>
+<Layout name={data.name}>
     <div class="mt-auto columns">
         <Organization org={data} columns={true}/>
         <People people={leadership} columns={true}/>
@@ -29,7 +29,7 @@ let leadership = data.people.filter(function(person) {
           <People people={people} columns={true} />
         </div>
     }
-</BaseLayout>
+</Layout>
 
 <style>
 </style>
