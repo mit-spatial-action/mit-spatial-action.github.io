@@ -10,6 +10,7 @@ export interface PersonModel {
     creds?: string[];
     pronouns?: string;
     leadership: boolean;
+    alum: boolean;
     roles?: string[];
     email: string;
     bio: string;
