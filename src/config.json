@@ -21,6 +21,11 @@
             "name": "Github",
             "url": "https://github.com/mit-spatial-action",
             "user": "mit-spatial-action"
+        },
+        {
+            "name": "Web",
+            "url": "https://mit-spatial-action.github.io/",
+            "user": "Website"
         }
     ],
     "people": [
