@@ -30,7 +30,7 @@
             "leadership": true,
             "alum": false,
             "creds": ["PhD", "GISP"],
-            "pronouns": "they/them",
+            "pronouns": "they/he",
             "roles": ["Director"],
             "email": "ehuntley@mit.edu",
             "socials": [
@@ -38,6 +38,11 @@
                     "name": "Github",
                     "url": "https://github.com/ericrobskyhuntley",
                     "user": "ericrobskyhuntley"
+                },
+                {
+                    "name": "LinkedIn",
+                    "url": "https://www.linkedin.com/in/ericrobskyhuntley/",
+                    "user": "LinkedIn"
                 },
                 {
                     "name": "Web",
