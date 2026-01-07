@@ -14,5 +14,5 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 ---
 
 <figure class="image">
-    <Picture src={images[photopath]()} alt={alt} width={256} height={256}/>
+    <Picture src={images[photopath]()} alt={alt} formats={["avif", "webp"]} loading="lazy" width={256} height={256}/>
 </figure>
