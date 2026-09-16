@@ -22,28 +22,27 @@ const iconSize = 20;
 <AboutCard columns={columns}>
   <div class="fixed-grid">
     <div class="grid">
-        {"photo" in person && 
-        <div class="cell">
-          <ImageBox src={person.photo} alt={"Photo of ".concat(person.name)} />
-        </div>
-        }
-        <div class="cell">
-          <p class="title">{person.name}{person.creds && ", ".concat(person.creds.join(", "))}</p>
-          <p class="subtitle">{person.roles && person.roles.join(", ")}</p>
-          <div class="tags are-medium">
-            <p class="tag">
-              <span class="mr-2 icon">
-                <Icon name="mdi:person" size={iconSize} />
-              </span>
-              <span>{person.pronouns}</span>
-            </p>
-            <p class="tag">
-              <span class="mr-2 icon">
-                <Icon name="mdi:email" size={iconSize} />
-              </span>
-              {person.email && <a href={"mailto:".concat(person.email)}>{person.email}</a>}
-            </p>
-          </div>
+      {"photo" in person && 
+      <div class="cell">
+        <ImageBox src={person.photo} alt={"Photo of ".concat(person.name)} />
+      </div>
+      }
+      <div class="cell">
+        <p class="title">{person.name}{person.creds && ", ".concat(person.creds.join(", "))}</p>
+        <p class="subtitle">{person.roles && person.roles.join(", ")}</p>
+        <div class="tags are-medium">
+          <p class="tag">
+            <span class="mr-2 icon">
+              <Icon name="mdi:person" size={iconSize} />
+            </span>
+            <span>{person.pronouns}</span>
+          </p>
+          <p class="tag">
+            <span class="mr-2 icon">
+              <Icon name="mdi:email" size={iconSize} />
+            </span>
+            {person.email && <a href={"mailto:".concat(person.email)}>{person.email}</a>}
+          </p>
         </div>
       </div>
     </div>
