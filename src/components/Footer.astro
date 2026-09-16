@@ -42,7 +42,7 @@ const { navItems, parent } = Astro.props;
                 <li><a href={item.path}>{item.title}</a></li>
             ))
         }
-        {
+        { data.socials &&
           data.socials.map((platform) => (
           <li><a href={platform.url}>{platform.name}</a></li>
           ))
@@ -53,9 +53,11 @@ const { navItems, parent } = Astro.props;
         <ul>
           <li>{data.email && <a href={"mailto:".concat(data.email)}>{data.email}</a>}</li>
           <li>{data.phone && <a href={"tel:".concat(data.phone)}>{data.phone}</a>}</li>
-          <li>{data.office.address}</li>
-          <li>{data.office.address2}</li>
-          <li>{data.office.city}, {data.office.state} {data.office.postal}</li>
+          { data.office && 
+            <li>{data.office.address}</li>
+            <li>{data.office.address2}</li>
+            <li>{data.office.city}, {data.office.state} {data.office.postal}</li>
+          }
         </ul>
       </div>
     </div>

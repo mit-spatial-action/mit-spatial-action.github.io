@@ -54,7 +54,7 @@ const iconSize = 20;
   <div class="block">
     <div class="tags">
       {
-        person.socials.map((platform) => (
+        person.socials && person.socials.map((platform) => (
           <div class="tag is-medium">
             <span class="icon mr-2">
               <Icon name={"mdi:".concat(platform.name.toLowerCase())} size={iconSize} />

@@ -2,7 +2,7 @@
 import {type NameURLModel } from '@ts/Models';
 interface Props {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   parent?: NameURLModel;
 }
 
@@ -13,7 +13,7 @@ const { title, subtitle, parent } = Astro.props;
     <div class="hero-body" style="z-index:1000">
         <div class="box box-shadow">
             <h1 class="title"> {title}</h1>
-            <p class="subtitle">{subtitle}</p>
+            {subtitle && <p class="subtitle">{subtitle}</p> }
             {parent &&
                 <p class="subtitle"><a href={parent.url}>{parent.name}</a></p>
             }

@@ -29,15 +29,17 @@ const { org, columns = true} = Astro.props;
   <div class="block">
     <ul>
       <li>{org.phone && <a href={"tel:".concat(org.phone)}>{org.phone}</a>}</li>
-      <li>{org.office.address}</li>
-      <li>{org.office.address2}</li>
-      <li>{org.office.city}, {org.office.state} {org.office.postal}</li>
+      {org.office && 
+        <li>{org.office.address}</li>
+        <li>{org.office.address2}</li>
+        <li>{org.office.city}, {org.office.state} {org.office.postal}</li>
+      }
     </ul>
   </div>
   <div class="block">
     <div class="tags">
       {
-        org.socials.map((platform) => (
+        org.socials && org.socials.map((platform) => (
           <div class="tag is-medium">
             <span class="icon mr-2">
               <Icon name={"mdi:".concat(platform.name.toLowerCase())} size={iconSize} />
