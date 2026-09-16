@@ -10,5 +10,6 @@ Simple [Astro](https://github.com/withastro/astro) static site for the [MIT DUSP
 
 1. Clone the repo.
 2. `npm install`
-3. `npm run dev`
+3. Configure your environment. Create a `.env` file in the root folder containing a [Mapbox Access Token](https://docs.mapbox.com/help/dive-deeper/access-tokens/) (see [.env.example](https://github.com/ericrobskyhuntley/ericrobskyhuntley.github.io/blob/main/.env.example)).
+3. `npm run start`
 4. Make a cup of tea.
