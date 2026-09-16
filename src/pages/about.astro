@@ -1,45 +1,53 @@
 ---
-import Layout from '@layouts/Layout.astro'
-import People from '@components/People.astro'
-import Organization from '@components/Organization.astro'
+import Layout from "@layouts/Layout.astro";
+import People from "@components/People.astro";
+import Organization from "@components/Organization.astro";
 
-import { type ConfigModel } from '@ts/Models'
+import { type ConfigModel } from "@ts/Models";
 
 import dataRaw from "@src/config.json";
-const data:ConfigModel= dataRaw;
+const data: ConfigModel = dataRaw;
 
-let leadership = data.people.filter(function(person) {
-      return person.leadership;
- });
+let leadership = data.people.filter(function (person) {
+  return person.leadership;
+});
 
- let people = data.people.filter(function(person) {
-      return !person.leadership && !person.alum;
- });
+let people = data.people.filter(function (person) {
+  return !person.leadership && !person.alum;
+});
 
-  let alumni = data.people.filter(function(person) {
-      return !person.leadership && person.alum;
- });
-
+let alumni = data.people.filter(function (person) {
+  return !person.leadership && person.alum;
+});
 ---
+
 <Layout name={data.name}>
-    <div class="mt-auto columns">
-        <Organization org={data} columns={true}/>
-        <People people={leadership} columns={true}/>
-      </div>
+  <div class="block">
+    <div class="columns">
+      <Organization org={data} columns={true} />
+      <People people={leadership} columns={true} />
     </div>
-    {(people.length >0 ) &&
+  </div>
+  {
+    people.length > 0 && (
+      <div class="block">
         <h1 class="title box box-shadow">The Team</h1>
         <div class="columns is-multiline">
           <People people={people} columns={true} />
         </div>
-    }
-    {(alumni.length >0 ) &&
+      </div>
+    )
+  }
+  {
+    alumni.length > 0 && (
+      <div class="block">
         <h1 class="title box box-shadow">Alumni</h1>
         <div class="columns is-multiline">
           <People people={alumni} columns={true} />
         </div>
-    }
+      </div>
+    )
+  }
 </Layout>
 
-<style>
-</style>
+<style></style>
