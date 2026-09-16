@@ -31,7 +31,7 @@ const { lng, lat, zoom, style, bearing, pitch = 0, accesstoken, light = true, li
 
 <script>
     import { type MapBoxLayerModel } from '@ts/Models'
-    import mapboxgl from "mapbox-gl";
+    import * as mapboxgl from "mapbox-gl/esm";
 
     const primaryColor = getComputedStyle(document.documentElement)
         .getPropertyValue('--bulma-primary')
@@ -40,8 +40,8 @@ const { lng, lat, zoom, style, bearing, pitch = 0, accesstoken, light = true, li
     class MapboxMap extends HTMLElement {
         constructor() {
             super()
-            mapboxgl.accessToken = this.dataset.accesstoken
             const map = new mapboxgl.Map({
+                accessToken : this.dataset.accesstoken,
                 container: 'map',
                 projection: 'globe',
                 center: [Number(this.dataset.lng), Number(this.dataset.lat)],
