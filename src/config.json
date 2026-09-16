@@ -8,7 +8,7 @@
     "description": "The [Spatial Analysis and Action Research Group](https://mit-spatial-action.github.io/), housed in MIT's [Department of Urban Studies and Planning](https://dusp.mit.edu/), uses spatial data science and mapping tools to support place-based movements for social justice in the northeastern United States. Our current research projects focus primarily on consolidation in the rental market and housing insecurity (including evictions) in Massachusetts. Methodologically, we’re most interested in analyzing powerful actors and institutions, with the understanding that these are not solely, but primarily, responsible for producing social injustice. We are also interested in developing new (and rethinking old) methods for interactive and static cartography.",
     "office": {
         "address": "77 Massachusetts Ave",
-        "address2": "Building 9-545",
+        "address2": "Building W41-4513",
         "city": "Cambridge",
         "state": "MA",
         "postal": "02139"
@@ -32,7 +32,7 @@
             "leadership": true,
             "alum": false,
             "creds": ["PhD", "GISP"],
-            "pronouns": "they/he",
+            "pronouns": "he/they",
             "roles": ["Director"],
             "email": "ehuntley@mit.edu",
             "socials": [
@@ -76,7 +76,7 @@
                 },
                 {
                     "name": "LinkedIn",
-                    "url": "https://www.linkedin.com/in/asya-a-79b345334/",
+                    "url": "https://www.linkedin.com/in/asya-aizman-79b345334/",
                     "user": "LinkedIn"
                 }
             ],
