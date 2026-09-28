@@ -20,7 +20,7 @@
     "bulma": "^1.0.4",
     "mapbox-gl": "^3.30.0",
     "markdown-it": "^14.2.0",
-    "sass": "^1.104.1",
+    "sass": "^1.105.0",
     "typescript": "^5.9.3"
   },
   "allowScripts": {
